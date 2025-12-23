@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALKIN Shop-in-Shop Franchise - Premium Water Business</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: #ffffff;
+            color: #333;
+        }
+
+        /* HEADER - STICKY */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 15px 40px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 55px;
+            width: auto;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .phone-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #0056b3;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .phone-link:hover {
+            color: #003d80;
+            transform: translateY(-2px);
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, #0056b3, #003d80);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 86, 179, 0.4);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            padding: 120px 40px 80px;
+            background: linear-gradient(135deg, #f5f7fb 0%, #eef2f8 100%);
+            position: relative;
+            overflow: hidden;
+            margin-top: 60px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 86, 179, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -200px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 168, 232, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite reverse;
+            z-index: 0;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            animation: slideInLeft 1s ease;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0, 86, 179, 0.1);
+            color: #0056b3;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(0, 86, 179, 0.2);
+        }
+
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: #003d80;
+            letter-spacing: -1px;
+        }
+
+        .hero-title .highlight {
+            background: linear-gradient(135deg, #0056b3, #00a8e8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .hero-features {
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: #444;
+        }
+
+        .feature-item i {
+            color: #00a8e8;
+            font-size: 1.4rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0056b3, #003d80);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 86, 179, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 86, 179, 0.4);
+        }
+
+        .phone-cta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            color: #0056b3;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .phone-cta i {
+            font-size: 1.5rem;
+            background: rgba(0, 86, 179, 0.1);
+            padding: 10px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .phone-cta:hover {
+            color: #003d80;
+        }
+
+        .phone-cta:hover i {
+            background: rgba(0, 86, 179, 0.2);
+            transform: scale(1.1);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: slideInRight 1s ease;
+        }
+
+        .image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: all 0.3s ease;
+        }
+
+        .image-wrapper:hover {
+            transform: perspective(1000px) rotateY(0deg);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 86, 179, 0.1) 0%, transparent 70%);
+            border-radius: 20px;
+            pointer-events: none;
+        }
+
+        .floating-badge {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: float 4s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        .floating-badge h4 {
+            color: #0056b3;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .floating-badge p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* CONTENT SECTIONS */
+        section {
+            padding: 80px 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-white {
+            background: #ffffff;
+        }
+
+        .section-light {
+            background: #f5f7fb;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #003d80;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .section-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .grid-2 img {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00a8e8;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-left: 5px solid #0056b3;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            color: #0056b3;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .product-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card h3 {
+            color: #0056b3;
+            padding: 25px 25px 15px;
+            font-size: 1.3rem;
+        }
+
+        .product-card ul {
+            list-style: none;
+            padding: 0 25px 25px;
+        }
+
+        .product-card li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #666;
+        }
+
+        .product-card li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #00a8e8;
+            font-weight: bold;
+        }
+
+        .zones-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .zone-badge {
+            background: linear-gradient(135deg, #0056b3, #003d80);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .partner-badge {
+            background: white;
+            border: 2px solid #0056b3;
+            color: #0056b3;
+            padding: 20px;
+            border-radius: 15px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .partner-badge:hover {
+            background: #0056b3;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .highlight-box {
+            background: #e6f0ff;
+            border-left: 5px solid #0056b3;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            font-weight: 600;
+            color: #003d80;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* CONTACT FORM */
+        .form-section {
+            background: linear-gradient(135deg, #003d80, #0056b3);
+            color: white;
+            padding: 80px 40px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container h2 {
+            color: #003d80;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .form-container p {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #0056b3;
+            box-shadow: 0 0 10px rgba(0, 86, 179, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #0056b3, #003d80);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 86, 179, 0.3);
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #333;
+        }
+
+        .form-footer p {
+            margin: 8px 0;
+            font-weight: 600;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 30px 40px;
+        }
+
+        /* ANIMATIONS */
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .hero { padding: 100px 30px 60px; }
+            .hero-container { grid-template-columns: 1fr; gap: 50px; }
+            .hero-title { font-size: 3rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            section { padding: 60px 30px; }
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 12px 20px; }
+            .phone-link { display: none; }
+            .hero { padding: 80px 20px 40px; margin-top: 70px; }
+            .hero-title { font-size: 2.2rem; }
+            .hero-subtitle { font-size: 1rem; }
+            .hero-buttons { flex-direction: column; align-items: flex-start; }
+            .section-title { font-size: 2rem; }
+            section { padding: 40px 20px; }
+            .form-container { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="Alkin Water Logo.jpg" alt="ALKIN Logo">
+            </div>
+            <div class="header-right">
+                <a href="tel:18001802180" class="phone-link">
+                    <i class="fas fa-phone-alt"></i> 1800-180-2180
+                </a>
+                <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Enquire Now</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-badge">🚀 Premium Franchise Model</span>
+                <h1 class="hero-title">Create a <span class="highlight">Water Business Monopoly</span> Inside Your Existing Store</h1>
+                <p class="hero-subtitle">High-Demand Water Products | Low Investment | No New Shop Required</p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Only 6 × 8 ft area required</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>No need to open a new showroom</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Operates inside your existing outlet</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Enquire Now</button>
+                    <a href="tel:18001802180" class="phone-cta">
+                        <i class="fas fa-phone-alt"></i> 1800-180-2180
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="Alkin 1new.jpg" alt="ALKIN Shop-in-Shop Model">
+                    <div class="image-overlay"></div>
+                    <div class="floating-badge">
+                        <h4>Shop-in-Shop Model</h4>
+                        <p>Premium Water Products</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- SECTION 1: WHAT IS ALKIN SHOP-IN-SHOP -->
+    <section class="section-light">
+        <div class="container">
+            <div class="section-content-wrapper">
+                <div class="section-text">
+                    <h2 class="section-title">What Is ALKIN Shop-in-Shop?</h2>
+                    <p class="section-subtitle">Start a Premium Water Business Inside Your Existing Outlet</p>
+                    <p class="section-content">ALKIN Shop-in-Shop is a low-risk franchise model where you sell ALKIN's high-demand water products from within your current shop.</p>
+                    <ul class="feature-list">
+                        <li>Only 6 × 8 ft area required</li>
+                        <li>No need to open a new showroom</li>
+                        <li>Operates inside your existing outlet</li>
+                        <li>Easy to manage alongside your current business</li>
+                    </ul>
+                    <div class="highlight-box">You don't change your business. You ADD a profitable category to it.</div>
+                    <div class="cta-section">
+                        <button class="btn-primary">Check Availability in Your Area</button>
+                    </div>
+                </div>
+
+                <div class="section-image">
+                    <img src="shop-in-shop.png" alt="ALKIN Shop-in-Shop Counter Display">
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+         :root {
+            --primary-color: #003366;
+            --secondary-color: #00AEEF;
+            --text-color: #333333;
+            --light-bg: #F9FAFB;
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 14px 35px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            font-weight: 600;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border: 2px solid var(--secondary-color);
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 174, 239, 0.3);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Section Light */
+        .section-light {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+
+        .section-content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .section-text {
+            flex: 1;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .section-content {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.05rem;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--secondary-color), #0099cc);
+            color: var(--white);
+            padding: 25px 30px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            animation: slideUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .cta-section {
+            animation: slideUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .section-image {
+            position: relative;
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .section-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transform: perspective(1000px) rotateY(-5deg);
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section-content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-light {
+                padding: 50px 0;
+            }
+        }
+    </style>
+    <!-- SECTION 2: INVESTMENT MODEL -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-title">Low Investment, High-Profit Model</h2>
+            <p class="section-subtitle">One-Time Investment | Fast-Moving Products | Zero Dead Stock</p>
+            <p class="section-content">This model is designed for quick rotation and cash flow, not inventory piling.</p>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3><i class="fas fa-wallet"></i> Low One-Time Investment</h3>
+                    <p>Designed for quick rotation and cash flow.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-hand-holding-usd"></i> No Royalty / No Monthly Fee</h3>
+                    <p>Products are demand-driven</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-boxes"></i> No Dead Stock</h3>
+                    <p>Fast-moving water products</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-store"></i> No New Shop Required</h3>
+                    <p>Utilize your existing space</p>
+                </div>
+            </div>
+            <div class="cta-section">
+                <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Investment Details</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: WHY WATER SELLS FAST -->
+    <section class="section-light">
+        <div class="container">
+            <h2 class="section-title">Why Water Products Sell Fast In India</h2>
+            <p class="section-subtitle">Demand Is Growing. Awareness Is Rising. Supply Is Limited.</p>
+            <div style="margin: 40px 0;">
+                <h3 style="color: #0056b3; margin-bottom: 20px; font-size: 1.3rem;">📊 Key Market Facts</h3>
+                <ul class="feature-list">
+                    <li>India's water purifier market is growing at 15%+ CAGR</li>
+                    <li>Alkaline water demand is increasing in urban & semi-urban homes</li>
+                    <li>North India faces severe hard-water issues</li>
+                    <li>Water treatment is now a daily necessity, not a luxury</li>
+                </ul>
+            </div>
+            <div class="highlight-box" style="font-style: italic; text-align: center; font-weight: 600;">
+                Customers don't delay buying water solutions. They replace, upgrade, and recommend.
+            </div>
+            <div class="cta-section">
+                <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Become an ALKIN Partner Before Your Competitor Does</button>
+            </div>
+        </div>
+    </section>
+
+  <!-- SECTION 4: PRODUCT RANGE -->
+<section class="section-white">
+    <div class="container">
+        <h2 class="section-title">ALKIN Product Range</h2>
+        <p class="section-subtitle">Multiple Products. One Counter. Continuous Sales.</p>
+
+        <div class="product-cards">
+
+            <!-- Alkaline Water Machines -->
+            <div class="product-card">
+                <img src="Alkin water ionizer  (1).png" alt="Alkaline Water Machine">
+                <h3>🔹 Alkaline Water Machines</h3>
+                <ul>
+                    <li>Advanced Alkaline Water Ionizers</li>
+                    <li>Adjustable pH Levels</li>
+                    <li>Mineral-Enriched Drinking Water</li>
+                    <li>Touch Panel & Digital Models</li>
+                </ul>
+            </div>
+
+            <!-- Inbuilt RO Water Dispensers -->
+            <div class="product-card">
+                <img src="alkin water dispenser.png" alt="Inbuilt RO Water Dispenser">
+                <h3>🔹 Inbuilt RO Water Dispensers</h3>
+                <ul>
+                    <li>Hot, Normal & Cold Water Options</li>
+                    <li>Office & Commercial Use</li>
+                    <li>Space Saving Design</li>
+                    <li>High Daily Output Capacity</li>
+                </ul>
+            </div>
+
+            <!-- Water Softeners -->
+            <div class="product-card">
+                <img src="alkin water softener.png" alt="Water Softener System">
+                <h3>🔹 Domestic & Commercial Water Softeners</h3>
+                <ul>
+                    <li>Whole House Water Softening</li>
+                    <li>Villa & Apartment Solutions</li>
+                    <li>Commercial Scale Systems</li>
+                </ul>
+            </div>
+
+            <!-- Industrial & Commercial RO Plants -->
+            <div class="product-card">
+                <img src="commerical purifers.jpg" alt="Commercial RO Plant">
+                <h3>🔹 Industrial & Commercial RO Plants</h3>
+                <ul>
+                    <li>High-Capacity RO Plants</li>
+                    <li>Industrial & Institutional Use</li>
+                    <li>Custom Designed Systems</li>
+                    <li>Low Operating Cost</li>
+                </ul>
+            </div>
+
+            <!-- Inbuilt RO Water Coolers -->
+            <div class="product-card featured">
+                <img src="alkin water cooler.jpg" alt="RO Water Cooler">
+                <h3>🔹 Inbuilt RO Water Coolers</h3>
+                <ul>
+                    <li>Heavy Duty Stainless Steel Body</li>
+                    <li>Ideal for Schools & Hospitals</li>
+                    <li>Continuous Cold Water Supply</li>
+                </ul>
+            </div>
+
+            <!-- STP / ETP & Pool Filtration -->
+            <div class="product-card featured">
+                <img src="alkin water dispenser.png" alt="Water Treatment Plants">
+                <h3>🔹 Advanced Water Treatment Solutions</h3>
+                <ul>
+                    <li>Swimming Pool Filtration Plants</li>
+                    <li>STP & ETP Treatment Plants</li>
+                    <li>Commercial & Industrial Applications</li>
+                    <li>Complete ALKIN Water Solutions</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="highlight-box" style="text-align:center;">
+            You sell residential + commercial + institutional products from the same location.
+        </div>
+
+        <div class="cta-section">
+            <button class="btn-primary"
+                onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                Download Product List
+            </button>
+        </div>
+    </div>
+</section>
+<style>
+    .product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 14px;
+    margin-bottom: 15px;
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+</style>
+
+   <!-- SECTION 5: WHY ALKIN -->
+<section class="section-light">
+    <div class="container">
+        <div class="why-alkin-wrapper">
+
+            <!-- LEFT CONTENT -->
+            <div class="why-alkin-content">
+                <h2 class="section-title">Why ALKIN Water?</h2>
+                <p class="section-subtitle">
+                    A Brand That Helps You SELL, Not Just Stock Products
+                </p>
+
+                <ul class="feature-list">
+                    <li>Trusted Indian water-treatment brand</li>
+                    <li>High-demand, utility-based products</li>
+                    <li>Strong brand image & customer confidence</li>
+                    <li>No dead inventory pressure</li>
+                    <li>Scalable B2C + B2B opportunity</li>
+                    <li>Growing footprint across North India</li>
+                </ul>
+
+                <div class="highlight-box">
+                    This is not a franchise for display. This is a franchise for SALES.
+                </div>
+
+                <div class="cta-section">
+                    <button class="btn-primary"
+                        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                        Apply for Shop-in-Shop Partnership
+                    </button>
+                </div>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="why-alkin-image">
+                <img src="why-alkin-water.png" alt="Why ALKIN Water">
+            </div>
+
+        </div>
+    </div>
+</section>
+<style>
+    .why-alkin-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.why-alkin-content {
+    flex: 1;
+}
+
+.why-alkin-image {
+    flex: 1;
+    text-align: right;
+}
+
+.why-alkin-image img {
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+    transition: transform 0.4s ease;
+}
+
+.why-alkin-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .why-alkin-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .why-alkin-image {
+        text-align: center;
+        margin-top: 30px;
+    }
+}
+
+</style>
+
+    <!-- SECTION 6: SUPPORT -->
+<section class="section-white">
+    <div class="container">
+        <div class="support-wrapper">
+
+            <!-- LEFT CONTENT -->
+            <div class="support-content">
+                <h2 class="section-title">Support From ALKIN</h2>
+                <p class="section-subtitle">Simple Model. Strong Back-End Support.</p>
+
+                <ul class="feature-list">
+                    <li>Product & technical training</li>
+                    <li>Sales guidance & pitching support</li>
+                    <li>Marketing creatives (digital & print)</li>
+                    <li>Centralised service coordination</li>
+                    <li>Business & growth guidance</li>
+                </ul>
+
+                <div class="highlight-box">
+                    You focus on selling. ALKIN handles the ecosystem.
+                </div>
+
+                <div class="cta-section">
+                    <button class="btn-primary"
+                        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                        Talk to Our Franchise Team
+                    </button>
+                </div>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="support-image">
+                <img src="indian_business_professionals_supporting_partnership.png"
+                     alt="ALKIN Franchise Support Team">
+            </div>
+
+        </div>
+    </div>
+</section>
+<style>
+    .support-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.support-content {
+    flex: 1;
+}
+
+.support-image {
+    flex: 1;
+    text-align: right;
+}
+
+.support-image img {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transition: transform 0.5s ease;
+}
+
+.support-image img:hover {
+    transform: scale(1.04);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .support-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .support-image {
+        text-align: center;
+        margin-top: 30px;
+    }
+}
+
+</style>
+
+    <!-- SECTION 7: WHO CAN PARTNER -->
+    <section class="section-light">
+        <div class="container">
+            <h2 class="section-title">Who Can Partner With ALKIN?</h2>
+            <p class="section-subtitle">If You Already Have a Counter, You're Eligible.</p>
+            <div class="partners-grid">
+                <div class="partner-badge"><i class="fas fa-plug"></i> Electrical Stores</div>
+                <div class="partner-badge"><i class="fas fa-laptop"></i> Electronic Counters</div>
+                <div class="partner-badge"><i class="fas fa-bath"></i> Sanitary & Bath Fitting Stores</div>
+                <div class="partner-badge"><i class="fas fa-tools"></i> Hardware Counters</div>
+                <div class="partner-badge"><i class="fas fa-utensils"></i> Modular Kitchen Showrooms</div>
+                <div class="partner-badge"><i class="fas fa-rocket"></i> New Startups & Entrepreneurs</div>
+            </div>
+            <div class="highlight-box" style="text-align: center; max-width: 600px; margin: 30px auto;">
+                No prior water-industry experience required.
+            </div>
+            <div class="cta-section">
+                <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Check Partner Eligibility</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: EXPANSION ZONES -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-title">Current Expansion Zones</h2>
+            <div class="zones-grid">
+                <div class="zone-badge"><i class="fas fa-map-marker-alt"></i> Punjab</div>
+                <div class="zone-badge"><i class="fas fa-map-marker-alt"></i> Haryana</div>
+                <div class="zone-badge"><i class="fas fa-map-marker-alt"></i> Delhi NCR</div>
+                <div class="zone-badge"><i class="fas fa-map-marker-alt"></i> Himachal Pradesh</div>
+                <div class="zone-badge"><i class="fas fa-map-marker-alt"></i> Jammu & Kashmir</div>
+                <div class="zone-badge"><i class="fas fa-map-marker-alt"></i> North India</div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; color: #d32f2f; font-weight: bold;">⚠️ Limited Shop-in-Shop partners per region.</p>
+        </div>
+    </section>
+
+    <!-- FINAL CTA & CONTACT FORM -->
+    <section id="contact" class="form-section">
+        <div class="form-container">
+            <h2>Ready to Add a High-Demand Business to Your Store?</h2>
+            <p>Low investment • 6×8 ft space only • No dead stock • Fast-moving water products</p>
+            
+            <form onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter your mobile number">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="city">City / Location</label>
+                    <input type="text" id="city" name="city" placeholder="Enter your city">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us more about your business..."></textarea>
+                </div>
+                <button type="submit" class="form-submit">Submit Inquiry</button>
+            </form>
+
+            <div class="form-footer">
+                <p><i class="fas fa-phone-alt"></i> Toll Free: 1800-180-2180</p>
+                <p><i class="fas fa-globe"></i> www.alkinwater.co.in</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 ALKIN Water. All Rights Reserved. | Premium Water Purification Solutions</p>
+    </footer>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! Our team will contact you soon.');
+            document.querySelector('form').reset();
+        }
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({behavior: 'smooth'});
+                }
+            });
+        });
+    </script>
+</body>
+</html>
